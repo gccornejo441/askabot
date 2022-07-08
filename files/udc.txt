@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+   <category>
+       <pattern>*</pattern>
+       <template>I wasn't sure what you meant.<delay>1</delay>
+       I'm still learning how to speak like a human,
+       <delay>1.5</delay>Would you like to begin with "What's Up"?</template>
+   </category>
+     <category>
+        <pattern>hi</pattern>
+        <template>
+            Hi, my name is Rick  Bobby.<delay>1</delay> <!--Giving 1 seconds delay-->
+            I function as a career counselor at WGU<delay>1</delay>
+            what is your given name?
+        </template>
+    </category>
+  
+     <category>
+        <pattern>my name is *</pattern>
+        <template>
+            Hi, <star/> <delay>1</delay> <!--Giving 1 seconds delay-->
+            i'm planning to tell you some basic questions regarding your interests in order to recommend a suitable job for you.<delay>1</delay>
+           are you ready to begin?
+            <reply>
+                <text>LET'S GET STARTED</text>
+                <postback>begin</postback>
+            </reply>
+        </template>
+    </category>
+    
+    
+      <!-- begin -->
+     <category>
+        <pattern>begin</pattern>
+        <template>
+            you looks excited, <delay>1</delay> <!--Giving 1 seconds delay-->
+           please select the one that perfectly represents you.<delay>1</delay>
+           
+            <reply>
+                <text>I enjoy mathematics.</text>
+                <postback>Math is something I enjoy.</postback>
+            </reply>
+            <split/>
+            <reply>
+                <text>Math does not like me.</text> 
+                <postback>I absolutely detest math.</postback>
+               
+            </reply>
+        </template>
+    </category>
+    
+    
+      <!-- i like math -->
+      <category>
+        <pattern>I like math</pattern>
+        <template>
+            math was a passion shared by all great minds throughout history.  <delay>1</delay> <!--Giving 1 seconds delay-->
+           next, which of these best describes you?<delay>1</delay>
+            <split/>
+            <button>
+                <text>I am a critical thinker who enjoys problem solving.
+                logical problems I occasionally read algorithms and writing them to solve real-world problems.
+                </text>
+                <postback>computer programmer</postback>
+            </button>
+            <split/>
+            <button>
+                <text>On the online, I collaborate with graphics and animations. I am creative and have good communication skills.</text>
+                <postback>web developer</postback>
+            </button>
+        </template>
+    </category>
+    
+
+       <!-- math don't likes me -->
+      <category>
+        <pattern>I absolutely despise math.</pattern>
+        <template>
+          wouldn't worry, no one can interact in math. Let's look into other opportunities.<delay>1</delay> <!--Giving 1 seconds delay-->
+          please choose among these which accurately fits you.<delay>1</delay>
+            <split/>
+            <button>
+                <text>I'd like to work as an executive because I have some leadership skills and enhance to my IT abilities.</text>
+                <postback>project manager</postback>
+            </button>
+            <split/>
+            <button>
+                <text>I enjoy working as a worker so instead of manage other academic stuff.</text>
+                <postback>I dislike getting on leadership roles.</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    <!-- math don't likes me : employee positions -->
+      <category>
+        <pattern>i donot like leadership positions</pattern>
+        <template>
+          Although it feels more comfortable to be called a supervisor, needs to pay for it with excessive pressure. Next, please choose one of those which best describes you.<delay>1</delay>
+            <split/>
+            <button>
+                <text>I appreciate both the physical and communication facets of computer systems. I enjoy managing IT assets, developing security policies, and repairing computers.</text>
+                <postback>network administrator</postback>
+            </button>
+            <split/>
+            <button>
+                <text>I'm not a smart person, but I'm a creative writer. I love creating graphics, layouts, and interface design.</text>
+                <postback>graphic sdesigner</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>computer programmer</pattern>
+        <template>Entirely predicated on your recent choices,
+            <delay>1</delay>
+            I would suggest that you apply for the role of "Computer Programmer."
+            <link>
+                <text>Find out more.</text>
+                <url>https://www.indeed.com/career-advice/resumes-cover-letters/computer-programmer-skills</url>
+            </link>
+            
+           <button>
+               <text>I certainly would to look through all five jobs.</text>
+               <postback>scrutinize everything</postback>
+           </button>
+    
+        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>web developer</pattern>
+        <template>Focused on someone latest choices,
+            <delay>1</delay>
+                I will indeed suggest that you apply for the role of "Web Developer."            
+                <link>
+                <text>Find out more</text>
+                <url>https://www.thebalancecareers.com/web-developer-job-description-salary-and-skills-2061841</url>
+            </link>
+            
+            <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>explore all</postback>
+           </button>
+        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>projectmanager</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            I would recommend that you apply for the position of "Project Manager."
+             <link>
+                <text>Find out more</text>
+                <url>https://www.projectmanager.com/</url>
+            </link>
+            
+            <button>
+               <text>Hold on, I actually want to look into all five jobs.</text>
+               <postback>explore all</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    <category>
+        <pattern>network engineer</pattern>
+        <template> Predicated on your recent choices,
+            <delay>1</delay>
+I would recommend that you apply for the position of "Network Engineer."
+<link>
+                <text>Find out more !</text>
+                <url>https://www.fieldengineer.com/skills/what-is-a-network-engineer</url>
+            </link>
+            
+            <button>
+               <text>Hold on, I actually want to look into all five jobs.</text>
+               <postback>exploreall</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    <category>
+        <pattern>graphics designer</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i will advise you "Graphics Designer" job.
+            <link>
+                <text>(learn more here !)</text>
+                <url>https://www.thebalancecareers.com/graphic-designer-job-description-and-salary-information-2061790</url>
+            </link>
+
+            <button>
+               <text>Hold on, I actually want to look into all five jobs.</text>
+               <postback>exploreall</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>exploreall</pattern>
+        <template> Click the associated link 
+            <delay>1</delay> to explore the each job in detail: 
+            <button>
+                <text>Computer Programmer</text>
+                <url>https://www.indeed.com/career-advice/resumes-cover-letters/computer-programmer-skills</url>
+            </button>
+            <button>
+               <text>Web Developer</text>
+                <url>https://www.thebalancecareers.com/web-developer-job-description-salary-and-skills-2061841</url> 
+            </button>
+            <button>
+                <text>Project Manager</text>
+                 <url>https://www.projectmanager.com/</url> 
+            </button>
+            <button>
+                <text>Network Engineer</text>
+               <url>https://www.techtarget.com/searchnetworking/resources/Networking-careers-and-certifications</url> 
+            </button>
+            <button>
+               <text>Graphics Designer</text>
+                <url>https://www.careerexplorer.com/careers/graphic-designer/</url> 
+            </button>
+        </template>
+    </category>
+    
+    
+    
+    
+        
+    </aiml>
