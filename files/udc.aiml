@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+   <category>
+       <pattern>*</pattern>
+       <template>hmm... i didn't quite understand it.<delay>1</delay>
+       I am still learning to talk like humans, 
+       <delay>1.5</delay> would you like to start with "Hi" ?</template>
+   </category>
+     <category>
+        <pattern>hi</pattern>
+        <template>
+            Hi, my name is rijal.<delay>1</delay> <!--Giving 1 seconds delay-->
+            i am the carrer advisor expert in WGU<delay>1</delay>
+            what is your name ?
+        </template>
+    </category>
+  
+     <category>
+        <pattern>my name is *</pattern>
+        <template>
+            Hi, <star/> <delay>1</delay> <!--Giving 1 seconds delay-->
+            i am going to ask you, some basic questions about your intrests in order to advise you a right job<delay>1</delay>
+            are you ready to begin ?
+            <reply>
+                <text>LET'S BEGIN</text>
+                <postback>begin</postback>
+            </reply>
+        </template>
+    </category>
+    
+    
+      <!-- begin -->
+     <category>
+        <pattern>begin</pattern>
+        <template>
+            you looks excited, <delay>1</delay> <!--Giving 1 seconds delay-->
+           please click the one , that defines you most<delay>1</delay>
+           
+            <reply>
+                <text>I like math</text>
+                <postback>I like math</postback>
+            </reply>
+            <split/>
+            <reply>
+                <text>math don't likes me</text> 
+                <postback>i donot like math</postback>
+               
+            </reply>
+        </template>
+    </category>
+    
+    
+      <!-- i like math -->
+      <category>
+        <pattern>I like math</pattern>
+        <template>
+            all genious in history loved math,  <delay>1</delay> <!--Giving 1 seconds delay-->
+           next, which of these defines you most<delay>1</delay>
+            <split/>
+            <button>
+                <text>I am critical thinker, I alike solving
+                logical problems.I like reading and writing 
+                algorithms to solve real world problem.</text>
+                <postback>computerprogrammer</postback>
+            </button>
+            <split/>
+            <button>
+                <text>I like working with graphics and animations on
+                internet. I have good creativity or presentation skill.</text>
+                <postback>webdeveloper</postback>
+            </button>
+        </template>
+    </category>
+    
+
+       <!-- math don't likes me -->
+      <category>
+        <pattern>i donot like math</pattern>
+        <template>
+           don't worry, noone can talk in math anyways. lets explore other options  <delay>1</delay> <!--Giving 1 seconds delay-->
+          next , please select one of these that defines you most<delay>1</delay>
+            <split/>
+            <button>
+                <text>I want to work as manager, I have some 
+                management skills along with IT.</text>
+                <postback>projectmanager</postback>
+            </button>
+            <split/>
+            <button>
+                <text>i don't like managing other's work, rather I like
+                to work as employee</text>
+                <postback>i donot like leadership positions</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    <!-- math don't likes me : employee positions -->
+      <category>
+        <pattern>i donot like leadership positions</pattern>
+        <template>
+           even it feel better to called a manager, people need to pay it with  extra stress
+             next , please select one of these that defines you more<delay>1</delay>
+            <split/>
+            <button>
+                <text>I like physical and communication aspect
+                  of computer.I like managing IT assets, making 
+                 policies for security, and fixing computers.</text>
+                <postback>networkengineer</postback>
+            </button>
+            <split/>
+            <button>
+                <text>I am not a critical thinker but I am creative. 
+                 I like designing graphics, layouts and user 
+                 interfaces</text>
+                <postback>graphicsdesigner</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>computerprogrammer</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i would advise you "Computer Programmer" job.
+            <link>
+                <text>(learn more here !)</text>
+                <url>https://www.thebalancecareers.com/computer-programmer-job-description-salary-and-skills-2061823</url>
+            </link>
+            
+           <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>exploreall</postback>
+           </button>
+    
+        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>webdeveloper</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i would advise you "Web Developer" job.
+            <link>
+                <text>(learn more here !)</text>
+                <url>https://www.thebalancecareers.com/web-developer-job-description-salary-and-skills-2061841</url>
+            </link>
+            
+            <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>exploreall</postback>
+           </button>
+        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>projectmanager</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i would advise you "Project Manager" job.
+             <link>
+                <text>(learn more here !)</text>
+                <url>https://www.northeastern.edu/graduate/blog/project-manager-responsibilities/</url>
+            </link>
+            
+            <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>exploreall</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    <category>
+        <pattern>networkengineer</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i would advise you "Network Engineer" job.
+            <link>
+                <text>(learn more here !)</text>
+                <url>https://www.fieldengineer.com/skills/what-is-a-network-engineer</url>
+            </link>
+            
+            <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>exploreall</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    <category>
+        <pattern>graphicsdesigner</pattern>
+        <template> Based on your recent selections,
+            <delay>1</delay>
+            i will advise you "Graphics Designer" job.
+            <link>
+                <text>(learn more here !)</text>
+                <url>https://www.thebalancecareers.com/graphic-designer-job-description-and-salary-information-2061790</url>
+            </link>
+            
+            <button>
+               <text>Hold on, Actually i want to explore all 5 jobs</text>
+               <postback>exploreall</postback>
+           </button>
+           
+        </template>
+    </category>
+    
+    
+    
+    <category>
+        <pattern>exploreall</pattern>
+        <template> Click the associated link 
+            <delay>1</delay> to explore the each job in detail: 
+            <button>
+                <text>Computer Programmer</text>
+                <url>https://www.thebalancecareers.com/computer-programmer-job-description-salary-and-skills-2061823</url>
+            </button>
+            <button>
+               <text>Web Developer</text>
+                <url>https://www.thebalancecareers.com/web-developer-job-description-salary-and-skills-2061841</url> 
+            </button>
+            <button>
+                <text>Project Manager</text>
+                 <url>https://www.northeastern.edu/graduate/blog/project-manager-responsibilities/</url> 
+            </button>
+            <button>
+                <text>Network Engineer</text>
+               <url>https://www.fieldengineer.com/skills/what-is-a-network-engineer</url> 
+            </button>
+            <button>
+               <text>Graphics Designer</text>
+                <url>https://www.thebalancecareers.com/graphic-designer-job-description-and-salary-information-2061790</url> 
+            </button>
+        
+        </template>
+    </category>
+    
+    
+    
+    
+        
+    </aiml>

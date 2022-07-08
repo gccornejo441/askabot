@@ -1,2 +1,0 @@
-# askabot
-This a pandorabot
